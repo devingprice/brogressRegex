@@ -12,6 +12,21 @@ function fetchRedditFeed(cb){
   });
 }
 
+function getTagsFromTitle(title){
+  const gender = /^[M|F|m|f]/.exec(title);
+  return {
+    gender: gender ? gender[0] : null,
+    age,
+    height: null,
+    weightBefore: null,
+    weightAfter: null,
+    timePeriod: null
+  }
+}
+
+console.log(getTagsFromTitle('M/30/6’1” [260lbs to 233lbs] (8 months)'))
+
 module.exports = {
-  fetchRedditFeed
+  fetchRedditFeed,
+  getTagsFromTitle
 }
